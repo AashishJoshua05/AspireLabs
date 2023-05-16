@@ -3,7 +3,7 @@ import '../styles/main.css';
 
 function ChatThread({ messages }) {
   return (
-    <div className="chat-thread overflow-y-auto h-80">
+    <div className="chat-thread overflow-y-auto h-80 bg-gray-100">
       {messages.map((message) => (
         <div key={message.id} className="message mb-4">
           <div className="message-header flex items-center justify-between">
@@ -49,14 +49,14 @@ function ThreadedChat({ showChat }) {
           <form className="message-input flex items-center mt-4" onSubmit={handleSendMessage}>
             <input
               type="text"
-              className="flex-grow px-4 py-2 rounded-l-lg focus:outline-none"
+              className="flex-grow px-4 py-2 rounded-l-lg outline-4 bg-gray-200"
               placeholder="Type your message..."
               value={inputValue}
               onChange={handleInputChange}
             />
             <button
               type="submit"
-              className="bg-blue-500 text-white px-6 py-2 rounded-r-lg"
+              className="bg-blue-500 text-white px-6 py-2 rounded-r-lg outline-4"
             >
               Send
             </button>
