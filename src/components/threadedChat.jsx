@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import '../styles/threadedChat.css';
+import '../styles/main.css';
 
 function ChatThread({ messages }) {
   return (
-    <div className="chat-thread">
+    <div className="chat-thread overflow-y-auto h-80">
       {messages.map((message) => (
-        <div key={message.id} className="message">
-          <div className="message-header">
-            <span className="username">{message.username}</span>
-            <span className="timestamp">{message.timestamp}</span>
+        <div key={message.id} className="message mb-4">
+          <div className="message-header flex items-center justify-between">
+            <span className="username font-bold">{message.username}</span>
+            <span className="timestamp text-gray-600 text-sm">{message.timestamp}</span>
           </div>
-          <div className="message-content">{message.content}</div>
+          <div className="message-content bg-gray-200 text-gray-800 p-2 rounded-lg mt-2">
+            {message.content}
+          </div>
         </div>
       ))}
     </div>
@@ -38,18 +40,26 @@ function ThreadedChat({ showChat }) {
   };
 
   return (
-    <div className="threaded-chat">
+    <div className="threaded-chat flex flex-col">
       {showChat && (
         <>
-          <ChatThread messages={messages} />
-          <form className="message-input" onSubmit={handleSendMessage}>
+          <div className="chat-box">
+            <ChatThread messages={messages} />
+          </div>
+          <form className="message-input flex items-center mt-4" onSubmit={handleSendMessage}>
             <input
               type="text"
+              className="flex-grow px-4 py-2 rounded-l-lg focus:outline-none"
               placeholder="Type your message..."
               value={inputValue}
               onChange={handleInputChange}
             />
-            <button type="submit">Send</button>
+            <button
+              type="submit"
+              className="bg-blue-500 text-white px-6 py-2 rounded-r-lg"
+            >
+              Send
+            </button>
           </form>
         </>
       )}
