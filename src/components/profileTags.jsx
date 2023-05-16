@@ -3,10 +3,23 @@ import '../styles/main.css';
 
 function ProfileTags() {
   const [profilePicture, setProfilePicture] = useState(null);
+  const [skills, setSkills] = useState([]);
+  const [newSkill, setNewSkill] = useState('');
 
   const handleProfilePictureChange = (event) => {
     const file = event.target.files[0];
     setProfilePicture(URL.createObjectURL(file));
+  };
+
+  const handleNewSkillChange = (event) => {
+    setNewSkill(event.target.value);
+  };
+
+  const addSkill = () => {
+    if (newSkill) {
+      setSkills([...skills, newSkill]);
+      setNewSkill('');
+    }
   };
 
   return (
@@ -90,13 +103,28 @@ function ProfileTags() {
       <div className="col-span-1">
         <div className="rounded-lg bg-gray-100 p-4 mb-4">
           <label className="font-bold">Skills:</label>
-          <select className="w-full">
-            <option value="">Select a skill</option>
-            <option value="HTML">HTML</option>
-            <option value="CSS">CSS</option>
-            <option value="JavaScript">JavaScript</option>
-            {/* Add more skills as needed */}
-          </select>
+          <div className="flex">
+            <input
+              className="w-full"
+              type="text"
+              placeholder="Enter a skill"
+              value={newSkill}
+              onChange={handleNewSkillChange}
+            />
+            <button className="ml-2 px-4 py-2 bg-blue-500 text-white rounded" onClick={addSkill}>
+              Add
+            </button>
+          </div>
+          <div className="mt-2">
+            {skills.map((skill, index) => (
+              <div
+                key={index}
+                className="inline-block bg-blue-500 text-white px-2 py-1 rounded mr-2 mb-2"
+              >
+                {skill}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <div className="col-span-2 flex justify-center">
