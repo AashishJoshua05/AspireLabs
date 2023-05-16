@@ -37,13 +37,8 @@ function ThreadedChat({ showChat }) {
     setInputValue('');
   };
 
-  const toggleChat = () => {
-    showChat();
-  };
-
   return (
     <div className="threaded-chat">
-      <button onClick={toggleChat}>{showChat ? 'Hide Chat' : 'Show Chat'}</button>
       {showChat && (
         <>
           <ChatThread messages={messages} />

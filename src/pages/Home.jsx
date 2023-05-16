@@ -1,10 +1,12 @@
 import React from 'react';
-import Cards from '../components/CardHolder.jsx'
-
+import CardHolder from '../components/cardHolder.jsx';
+import SearchBar from '../components/searchBar.jsx';
 function Home() {
     return(
         <div>
-            <Cards />
+            
+            <SearchBar />
+            <CardHolder />
         </div>
     )
 }
