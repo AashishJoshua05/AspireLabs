@@ -1,27 +1,7 @@
 import React from 'react';
 import CardComponent from './card.jsx';
+import jobListings from '../assets/jobs.json';
 import "../styles/main.css";
-
-const jobListings = [
-  {
-    id: "aaaa",
-    designation: 'Frontend Developer',
-    location: 'Habibi Dubai',
-    companyName: 'Vakes & Co.',
-  },
-  {
-    id: "bbbb",
-    designation: 'Backend Developer',
-    location: 'Mumbai',
-    companyName: 'Vakes & Co.',
-  },
-  {
-    id: "cccc",
-    designation: 'Full Stack Developer',
-    location: 'Hyderabad',
-    companyName: 'Vakes & Co.',
-  },
-];
 
 function CardHolder() {
   return (

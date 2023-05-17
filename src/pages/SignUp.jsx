@@ -1,8 +1,7 @@
 import React from 'react';
-import LoginPage from '../components/loginPage.jsx';
-import SignUp from '../components/signUpPage.jsx'
+import SignUp from '../components/signUp.jsx'
 
-function Home() {
+function SignUpPage() {
     return(
         <div>
             <SignUp />
@@ -11,4 +10,4 @@ function Home() {
 }
 
 
-export default Home;
+export default SignUpPage;

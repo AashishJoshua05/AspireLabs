@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/main.css';
 import loginImage from '../assets/recruit.jpg';
 
-function SignupPage() {
+function SignUp() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -105,4 +105,4 @@ function SignupPage() {
     );
 }
 
-export default SignupPage;
+export default SignUp;

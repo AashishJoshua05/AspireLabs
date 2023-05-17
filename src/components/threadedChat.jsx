@@ -19,9 +19,10 @@ function ChatThread({ messages }) {
   );
 }
 
-function ThreadedChat({ showChat }) {
+function ThreadedChat() {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [showChat, setShowChat] = useState(true);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -37,6 +38,10 @@ function ThreadedChat({ showChat }) {
     };
     setMessages((prevMessages) => [...prevMessages, newMessage]);
     setInputValue('');
+  };
+
+  const handleToggleChat = () => {
+    setShowChat((prevState) => !prevState);
   };
 
   return (
@@ -63,6 +68,9 @@ function ThreadedChat({ showChat }) {
           </form>
         </>
       )}
+      <button className="mt-4 px-4 py-2 bg-gray-500 text-white rounded" onClick={handleToggleChat}>
+        {showChat ? 'Hide Chat' : 'Show Chat'}
+      </button>
     </div>
   );
 }

@@ -1,0 +1,27 @@
+[
+    {
+      "id": "1",
+      "designation": "Frontend Intern",
+      "location": "Habibi Dubai",
+      "companyName": "Vakes & Co."
+    },
+    {
+      "id": "2",
+      "designation": "Backend Intern",
+      "location": "Mumbai",
+      "companyName": "Vakes & Co."
+    },
+    {
+      "id": "3",
+      "designation": "Full Stack Intern",
+      "location": "Hyderabad",
+      "companyName": "Vakes & Co."
+    },
+    {
+        "id" : "4",
+        "designation": "Data Analyst Intern",
+        "location": "Chennai",
+        "companyName":"Vakes & Co."
+    }
+]
+  
